@@ -7,6 +7,7 @@ import {
   Menu,
   Settings,
   Users,
+  X, // Added the X icon import
 } from "lucide-react";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -34,7 +35,7 @@ const Navbar = () => {
 
   const handleNavigation = (path) => {
     navigate(path);
-    setIsOpen(false);
+    setIsOpen(false); // Close the menu after navigation
   };
 
   return (
@@ -47,12 +48,12 @@ const Navbar = () => {
       </button>
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 lg:hidden"
+          className="fixed inset-0 bg-black/50 lg:hidden z-30" // Added z-index to ensure overlay is on top
           onClick={() => setIsOpen(false)}
         />
       )}
       <nav
-        className={`fixed top-0 left-0 z-40 h-screen bg-blue-600 transition-transform duration-300 shadow-lg
+        className={`fixed top-0 left-0 z-40 h-screen bg-blue-600 transition-transform duration-300 ease-in-out shadow-lg
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
           lg:translate-x-0 w-64`}
       >
