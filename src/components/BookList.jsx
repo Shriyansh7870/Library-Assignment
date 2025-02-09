@@ -12,7 +12,7 @@ const BookList = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [bookToDelete, setBookToDelete] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const booksPerPage = 5;
+  const booksPerPage = 6;
 
   const indexOfLastBook = currentPage * booksPerPage;
   const indexOfFirstBook = indexOfLastBook - booksPerPage;
